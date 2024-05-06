@@ -1,0 +1,107 @@
+a. Shell script program to check whether given file is a directory or not
+
+Output:
+Program:
+inpu=$1
+[ -d "$inpu" ] && echo "directory"
+[ -f "$inpu" ] && echo "file"
+(bash file1.sh os, bash file1.sh abc.txt)
+
+b. Shell script program to count number of files in a Directory
+Program:
+FILE="/tmp/count.txt"
+echo -n "Enter directory name : "
+read dname
+ls $dname > $FILE
+echo "No of files in directory : $(grep [^*$] $FILE -c)"
+rm -f $FILE
+(./file3.sh)
+
+c. Shell script program to copy contents of one file to another
+Program:
+echo -n "Enter soruce file name : "
+read src
+echo -n "Enter target file name : "
+read targ
+cp $src $targ
+status=$?
+if [ $status -eq 0 ]
+then
+echo 'File copied successfully'
+else
+echo 'Problem copying file'
+fi
+(./file5.sh)
+
+d. Create directory, write contents on that and Copy to a suitable location in your home
+directory.
+Program:
+echo "enter directory name that you want to create"
+read dirname
+mkdir $dirname
+cd $dirname
+echo "enter source file contents"
+cat > filex.txt
+echo "enter dest file contents"
+cat >filey.txt
+cp filex.txt filey.txt
+status=$?
+if [ $status -eq 0 ]
+then
+echo 'File copied successfully'
+else
+echo 'Problem copying file'
+fi
+(vim file6.sh, ./file6.sh)
+
+e. Use a pipeline and command substitution to set the length of a line in file to a
+variable.
+
+511@ubuntu:~/Unix$ cat > pass
+hellounix
+file1
+
+Program:
+echo "Enter File Name"
+read file
+if [ -f $file ]
+then
+echo "File Found with a Name $file \n"
+echo "File Content as below \n"
+count=0
+val=0
+while read line
+do
+val=$("$line" | wc -c)
+echo "$line -->Containd $val Charecter"
+count=$((count+1))
+done < $file
+echo "Total Line in File : $count"
+else
+echo "File Not Found check other file using running script"
+fi
+(vim pipe.sh, ./pipe.sh)
+
+f. Write a program using sed command to print duplicate lines of Input.
+cat > tstt
+Ji
+Hi
+Hi
+Hi
+Hello
+Hello
+Bye
+
+Program:
+sort tstt | sed '$!N; s/^\(.*\)\n\1$/\1/; t; D'
+
+Explanation
+● We read the next line from input with the N command which appends the next line to
+pattern space separated by "\n" character.
+● $! prevents it from doing on the last line.
+● The substitution replaces two repeating strings with one.
+● The t command takes the script to the end where the current pattern space gets printed
+automatically.
+● If the substitution was not successful, D executes, deleting the non-repeated string.
+● The cycle continues and this way only the duplicate lines get printed once.
+● You can use process substitution if you please by doing <(sort file) to remove pipes.

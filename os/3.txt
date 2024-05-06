@@ -1,0 +1,13 @@
+ ifconfig 
+ Uptime 
+ ping 
+ traceroute 
+ netstat 
+ DIG
+ nslookup
+ whois
+ hostname
+ iwconfig
+ host
+ route
+ ARP

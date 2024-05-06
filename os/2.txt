@@ -1,0 +1,32 @@
+cat 
+Cat [filename] 
+Cat [filenamel filename2]
+Cat *.txt 
+Cat -n [filename] 
+Cat -e 
+Tac [filename] 
+cat [file1 file2]> all
+Cat -s [filename] 
+Cat > [filename] 
+Cat [file1] > [file2] 
+Cat [file1] >> [file2] 
+cd
+chmod [option] mode files 
+clear
+Date
+cp
+clear
+locate
+lpr
+ls
+man
+mkdir
+rmdir
+rm
+pwd
+mv
+ps
+whoami
+who
+sudo
+

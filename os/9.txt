@@ -1,0 +1,22 @@
+top
+ps -a
+ps -A | less
+ps -A | grep firefox
+Pstree:
+kill
+kill pid
+Pgrep
+pgrep firefox
+➢ pkill firefox
+➢ killall firefox
+renice 19 PID
+Free
+Free -m
+To see the size of the memory in (MB) Megabytes use option as -m.
+➢ Free -h
+Using -g option with free command, would display the size of the
+memory in GB(Gigabytes).
+
+Vmstat
+$ cat /proc/meminfo
+$ sudo dmidecode -t 17

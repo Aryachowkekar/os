@@ -1,0 +1,50 @@
+#!/bin/ksh
+# This is a comment on a line by itself
+clear # This comment is sharing the line with the clear command
+echo "Text Line 1"
+print "Text Line 2"
+exit 0
+
+Displaying Output
+The example shell script above shows two methods for displaying output to standard output:
+echo "Text Line 1"
+print "Text Line 2"
+
+Exiting a Shell Script
+All shell scripts should be terminated with the exit command:
+exit 0
+
+$ chmod u+x script1
+If you wanted to allow everyone (all) to execute the script, you would use this command:
+$ chmod a+x script1
+After the script file has been made an executable with the chmod command, you can run the
+script in a new shell by giving the path to the script:
+$ ./script1
+This (./) would be the path to script1 if you are in the same directory as the script. You can
+optionally run the shell program and pass it the script name as an argument:
+
+$ /bin/ksh script1
+$ /home/student1/script1
+or
+$ /bin/ksh /home/student1/script1
+
+Text Line 1
+Text Line 2
+
+Program:
+echo "How many number of terms to be generated ?"
+read n
+x=0
+y=1
+i=2
+echo "Fibonacci Series up to $n terms :"
+echo "$x"
+echo "$y"
+while [ $i -lt $n ]
+do
+i=`expr $i + 1 `
+z=`expr $x + $y `
+echo "$z"
+x=$y
+y=$z
+done

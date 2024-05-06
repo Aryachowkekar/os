@@ -1,0 +1,40 @@
+i) command to create user 
+$ sudo useradd JTP3 
+
+ii) To set password 
+$ sudo passwd JTP3 
+
+su jtp 
+su root 
+id
+
+iv) Delete user 
+(userdel) userdel -r <userName> 
+
+usermod -c <'newName'> <oldName> 
+example: usermod -c 'jhonny' john 
+
+B. Create Group 
+i) Add a new group 
+command:groupadd 
+
+1. groupadd php 
+2. groupadd java 
+3. groupadd android 
+4. groupadd spring 
+
+tail -4 /etc/group
+
+1. usermod -a -G php akki 
+2. usermod -a -G php abc 
+3. usermod -a -G java jtp
+
+groupmod -n <oldGroup> <newGroup> 
+Example: 
+groupmod -n sql spring 
+
+groupdel sql
+
+
+
+

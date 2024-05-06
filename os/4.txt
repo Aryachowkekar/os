@@ -1,0 +1,15 @@
+who
+echo $SHELL
+echo $HOME
+uname
+echo $PATH
+pwd
+users | wc -w or
+who | grep -c
+cat /etc/shells
+xev
+cat /proc/cpuinfo
+cat /proc/meminfo
+sudo lshw -class disk
+
+
